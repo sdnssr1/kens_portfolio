@@ -1,0 +1,222 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp, Briefcase } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+interface TimelineEntry {
+  id: string;
+  role: string;
+  company: string;
+  duration: string;
+  location: string;
+  responsibilities: string[];
+  achievements: string[];
+}
+
+interface ExperienceTimelineProps {
+  entries?: TimelineEntry[];
+}
+
+const ExperienceTimeline = ({
+  entries = defaultEntries,
+}: ExperienceTimelineProps) => {
+  const [expandedId, setExpandedId] = React.useState<string | null>(null);
+
+  const toggleExpand = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Professional Experience
+        </h2>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+
+          {entries.map((entry, index) => (
+            <motion.div
+              key={entry.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative mb-12 ${index % 2 === 0 ? "text-right" : "text-left"}`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4">
+                <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+                  <Briefcase className="h-4 w-4 text-white" />
+                </div>
+              </div>
+
+              {/* Content card */}
+              <div
+                className={`w-5/12 ${index % 2 === 0 ? "mr-auto pr-8" : "ml-auto pl-8"}`}
+              >
+                <Card className="overflow-hidden border-l-4 border-red-600 shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {entry.role}
+                        </h3>
+                        <p className="text-red-600 font-medium">
+                          {entry.company}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          {entry.duration}
+                        </p>
+                        <p className="text-gray-500 text-sm mb-4">
+                          {entry.location}
+                        </p>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => toggleExpand(entry.id)}
+                        className="mt-1"
+                      >
+                        {expandedId === entry.id ? (
+                          <ChevronUp />
+                        ) : (
+                          <ChevronDown />
+                        )}
+                      </Button>
+                    </div>
+
+                    {expandedId === entry.id && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-4 pt-4 border-t border-gray-200"
+                      >
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-gray-800 mb-2">
+                            Key Responsibilities:
+                          </h4>
+                          <ul className="list-disc pl-5 space-y-1">
+                            {entry.responsibilities.map((item, i) => (
+                              <li key={i} className="text-gray-600">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-2">
+                            Key Achievements:
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {entry.achievements.map((achievement, i) => (
+                              <Badge
+                                key={i}
+                                variant="outline"
+                                className="bg-red-50 text-red-700 border-red-200"
+                              >
+                                {achievement}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const defaultEntries: TimelineEntry[] = [
+  {
+    id: "1",
+    role: "Senior Business Development Manager",
+    company: "Honda Motor Co., Ltd.",
+    duration: "2019 - Present",
+    location: "Tokyo, Japan",
+    responsibilities: [
+      "Lead strategic business initiatives across APAC markets",
+      "Develop and implement market expansion strategies",
+      "Manage cross-functional teams of 15+ professionals",
+      "Oversee annual budget of $12M for business development activities",
+    ],
+    achievements: [
+      "Increased market share by 12%",
+      "Launched 3 new product lines",
+      "Negotiated key partnerships",
+      "Reduced operational costs by 18%",
+    ],
+  },
+  {
+    id: "2",
+    role: "Business Development Manager",
+    company: "Honda Motor Co., Ltd.",
+    duration: "2015 - 2019",
+    location: "Osaka, Japan",
+    responsibilities: [
+      "Identified and developed new business opportunities in emerging markets",
+      "Conducted market research and competitive analysis",
+      "Managed client relationships and partnerships",
+      "Prepared and presented business proposals to senior leadership",
+    ],
+    achievements: [
+      "Secured 5 major accounts",
+      "Exceeded sales targets by 22%",
+      "Developed new market strategy",
+      "Led successful product launch",
+    ],
+  },
+  {
+    id: "3",
+    role: "Marketing Specialist",
+    company: "Honda Motor Co., Ltd.",
+    duration: "2012 - 2015",
+    location: "Tokyo, Japan",
+    responsibilities: [
+      "Developed and executed marketing campaigns for automotive products",
+      "Collaborated with advertising agencies on brand messaging",
+      "Analyzed market trends and consumer behavior",
+      "Managed social media presence and digital marketing initiatives",
+    ],
+    achievements: [
+      "Increased social engagement by 45%",
+      "Redesigned marketing materials",
+      "Optimized campaign ROI",
+      "Won industry marketing award",
+    ],
+  },
+  {
+    id: "4",
+    role: "Business Analyst",
+    company: "Honda Motor Co., Ltd.",
+    duration: "2010 - 2012",
+    location: "Nagoya, Japan",
+    responsibilities: [
+      "Performed financial analysis and forecasting for business units",
+      "Prepared reports and presentations for management review",
+      "Supported strategic planning processes",
+      "Identified process improvement opportunities",
+    ],
+    achievements: [
+      "Streamlined reporting process",
+      "Implemented new analytics tools",
+      "Improved forecast accuracy by 18%",
+      "Developed executive dashboard",
+    ],
+  },
+];
+
+export default ExperienceTimeline;
