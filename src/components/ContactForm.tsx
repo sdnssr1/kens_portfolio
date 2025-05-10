@@ -98,29 +98,32 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white p-6 rounded-xl">
+    <div className="w-full max-w-2xl mx-auto bg-zinc-900 p-6 rounded-xl border border-zinc-800">
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="text-2xl font-bold text-center text-gray-100">
             Get in Touch
           </CardTitle>
-          <CardDescription className="text-center">
-            Fill out the form below to contact Ken directly
+          <CardDescription className="text-center text-gray-400">
+            Fill out the form below to contact Ken Muvatsi directly
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSubmitted ? (
-            <Alert className="bg-green-50 border-green-200 mb-6">
-              <CheckCircle className="h-5 w-5 text-green-600" />
-              <AlertDescription className="text-green-800">
-                Thank you for your message! Ken will get back to you soon.
+            <Alert className="bg-zinc-800 border-zinc-700 mb-6">
+              <CheckCircle className="h-5 w-5 text-gray-300" />
+              <AlertDescription className="text-gray-300">
+                Thank you for your message! Ken Muvatsi will get back to you
+                soon.
               </AlertDescription>
             </Alert>
           ) : null}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name" className="text-gray-300">
+                Name
+              </Label>
               <Input
                 id="name"
                 name="name"
@@ -135,7 +138,9 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-gray-300">
+                Email
+              </Label>
               <Input
                 id="email"
                 name="email"
@@ -151,7 +156,9 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
+              <Label htmlFor="subject" className="text-gray-300">
+                Subject
+              </Label>
               <Input
                 id="subject"
                 name="subject"
@@ -166,7 +173,9 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message" className="text-gray-300">
+                Message
+              </Label>
               <Textarea
                 id="message"
                 name="message"
@@ -183,20 +192,20 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
 
             <Button
               type="submit"
-              className="w-full bg-red-600 hover:bg-red-700 text-white"
+              className="w-full bg-zinc-800 hover:bg-zinc-700 text-gray-200 border border-zinc-700"
             >
               Send Message
             </Button>
           </form>
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
-          <div className="w-full border-t border-gray-200 pt-4">
-            <h3 className="text-sm font-medium text-gray-700 mb-3">
-              Connect with Ken
+          <div className="w-full border-t border-zinc-700 pt-4">
+            <h3 className="text-sm font-medium text-gray-300 mb-3">
+              Connect with Ken Muvatsi
             </h3>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://linkedin.com/in/ken-honda"
+                href="https://linkedin.com/in/ken-muvatsi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-gray-600 hover:text-red-600"
@@ -205,11 +214,11 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
                 LinkedIn
               </a>
               <a
-                href="mailto:ken.honda@example.com"
+                href="mailto:ken.muvatsi@example.com"
                 className="flex items-center text-sm text-gray-600 hover:text-red-600"
               >
                 <Mail className="h-5 w-5 mr-2" />
-                ken.honda@example.com
+                ken.muvatsi@example.com
               </a>
               <a
                 href="tel:+1234567890"

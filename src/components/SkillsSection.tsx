@@ -43,9 +43,17 @@ const SkillsSection = ({ skills = defaultSkills }: SkillsSectionProps) => {
   const softSkills = skills.filter((skill) => skill.category === "soft");
 
   return (
-    <section id="skills" className="py-16 bg-white">
+    <section
+      id="skills"
+      className="py-16 bg-black"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+        backgroundSize: "20px 20px",
+      }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">
           Skills & Expertise
         </h2>
 
@@ -138,18 +146,18 @@ interface SkillCardProps {
 const SkillCard = ({ skill, onClick }: SkillCardProps) => {
   return (
     <Card
-      className="hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-l-red-600"
+      className="hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-l-gray-400 bg-zinc-800 text-gray-200"
       onClick={() => onClick(skill)}
     >
       <CardContent className="p-6">
-        <h4 className="font-medium text-lg mb-2">{skill.name}</h4>
+        <h4 className="font-medium text-lg mb-2 text-gray-200">{skill.name}</h4>
         <div className="flex items-center mb-2">
-          <Progress value={skill.proficiency} className="h-2" />
-          <span className="ml-2 text-sm text-gray-500">
+          <Progress value={skill.proficiency} className="h-2 bg-zinc-700" />
+          <span className="ml-2 text-sm text-gray-400">
             {skill.proficiency}%
           </span>
         </div>
-        <p className="text-sm text-gray-600 line-clamp-2">
+        <p className="text-sm text-gray-400 line-clamp-2">
           {skill.description}
         </p>
       </CardContent>

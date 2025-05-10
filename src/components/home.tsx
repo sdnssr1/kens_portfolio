@@ -9,7 +9,7 @@ const HomePage = () => {
   // Create a placeholder SkillsSection component since it's not available
   const SkillsSection = () => {
     return (
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-zinc-900 rounded-lg shadow-lg border border-zinc-800 p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Business Skills */}
           <div className="space-y-4">
@@ -176,12 +176,12 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-black/90 backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center">
-            <span className="text-xl font-bold text-red-600">Ken Honda</span>
+            <span className="text-xl font-bold text-gray-200">Ken Muvatsi</span>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a
@@ -217,7 +217,7 @@ const HomePage = () => {
           </nav>
           <div className="md:hidden">
             {/* Mobile menu button would go here */}
-            <button className="p-2 text-gray-700">
+            <button className="p-2 text-gray-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -248,7 +248,15 @@ const HomePage = () => {
         <Separator className="max-w-5xl mx-auto" />
 
         {/* Experience Timeline Section */}
-        <section id="experience" className="py-16 md:py-24 bg-gray-50">
+        <section
+          id="experience"
+          className="py-16 md:py-24 bg-zinc-900"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        >
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -257,10 +265,10 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-gray-100 mb-4">
                 Professional Experience
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                 My career journey at Honda, showcasing leadership and business
                 expertise in the automotive industry.
               </p>
@@ -272,7 +280,15 @@ const HomePage = () => {
         <Separator className="max-w-5xl mx-auto" />
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 md:py-24">
+        <section
+          id="skills"
+          className="py-16 md:py-24 bg-black"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        >
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -281,10 +297,10 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-gray-100 mb-4">
                 Skills & Expertise
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                 Core competencies and professional skills developed throughout
                 my career at Honda.
               </p>
@@ -296,7 +312,15 @@ const HomePage = () => {
         <Separator className="max-w-5xl mx-auto" />
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-24 bg-gray-50">
+        <section
+          id="about"
+          className="py-16 md:py-24 bg-zinc-900"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        >
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -308,15 +332,15 @@ const HomePage = () => {
               <div>
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="Ken Honda at Honda corporate office"
+                  alt="Ken Muvatsi at Honda corporate office"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-gray-100 mb-6">
                   About Me
                 </h2>
-                <p className="text-lg text-gray-600 mb-4">
+                <p className="text-lg text-gray-400 mb-4">
                   With over 15 years at Honda, I've dedicated my career to
                   driving business growth and innovation in the automotive
                   industry. My journey has taken me through various leadership
@@ -342,7 +366,15 @@ const HomePage = () => {
         <Separator className="max-w-5xl mx-auto" />
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 md:py-24">
+        <section
+          id="contact"
+          className="py-16 md:py-24 bg-black"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        >
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -351,10 +383,10 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-gray-100 mb-4">
                 Get In Touch
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                 Interested in connecting? Feel free to reach out through the
                 form below or via my professional networks.
               </p>
@@ -367,12 +399,21 @@ const HomePage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer
+        className="bg-zinc-950 text-gray-300 py-12"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(192, 192, 192, 0.05) 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <span className="text-xl font-bold text-red-500">Ken Honda</span>
-              <p className="mt-2 text-gray-400">
+              <span className="text-xl font-bold text-gray-200">
+                Ken Muvatsi
+              </span>
+              <p className="mt-2 text-gray-500">
                 Business Professional at Honda
               </p>
             </div>
@@ -422,7 +463,7 @@ const HomePage = () => {
                 </svg>
               </a>
               <a
-                href="mailto:ken.honda@example.com"
+                href="mailto:ken.muvatsi@example.com"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <svg
@@ -444,7 +485,9 @@ const HomePage = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} Ken Honda. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Ken Muvatsi. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

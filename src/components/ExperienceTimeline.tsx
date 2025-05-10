@@ -29,15 +29,22 @@ const ExperienceTimeline = ({
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section
+      className="py-16 bg-zinc-900"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
+        backgroundSize: "20px 20px",
+      }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">
           Professional Experience
         </h2>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-zinc-700"></div>
 
           {entries.map((entry, index) => (
             <motion.div
@@ -50,7 +57,7 @@ const ExperienceTimeline = ({
             >
               {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4">
-                <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+                <div className="h-8 w-8 rounded-full bg-gray-400 flex items-center justify-center shadow-lg">
                   <Briefcase className="h-4 w-4 text-white" />
                 </div>
               </div>
@@ -59,17 +66,17 @@ const ExperienceTimeline = ({
               <div
                 className={`w-5/12 ${index % 2 === 0 ? "mr-auto pr-8" : "ml-auto pl-8"}`}
               >
-                <Card className="overflow-hidden border-l-4 border-red-600 shadow-md hover:shadow-lg transition-shadow">
+                <Card className="overflow-hidden border-l-4 border-gray-400 shadow-md hover:shadow-lg transition-shadow bg-zinc-800 text-gray-200">
                   <CardContent className="p-6">
                     <div className="flex justify-between items-start">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">
+                        <h3 className="text-xl font-bold text-gray-100">
                           {entry.role}
                         </h3>
-                        <p className="text-red-600 font-medium">
+                        <p className="text-gray-300 font-medium">
                           {entry.company}
                         </p>
-                        <p className="text-gray-500 text-sm">
+                        <p className="text-gray-400 text-sm">
                           {entry.duration}
                         </p>
                         <p className="text-gray-500 text-sm mb-4">
@@ -96,7 +103,7 @@ const ExperienceTimeline = ({
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-4 pt-4 border-t border-gray-200"
+                        className="mt-4 pt-4 border-t border-zinc-700"
                       >
                         <div className="mb-4">
                           <h4 className="font-semibold text-gray-800 mb-2">
@@ -104,7 +111,7 @@ const ExperienceTimeline = ({
                           </h4>
                           <ul className="list-disc pl-5 space-y-1">
                             {entry.responsibilities.map((item, i) => (
-                              <li key={i} className="text-gray-600">
+                              <li key={i} className="text-gray-400">
                                 {item}
                               </li>
                             ))}
@@ -120,7 +127,7 @@ const ExperienceTimeline = ({
                               <Badge
                                 key={i}
                                 variant="outline"
-                                className="bg-red-50 text-red-700 border-red-200"
+                                className="bg-zinc-700 text-gray-300 border-zinc-600"
                               >
                                 {achievement}
                               </Badge>
