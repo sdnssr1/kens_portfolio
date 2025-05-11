@@ -1,9 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp, Briefcase } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Briefcase, ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
 
 interface TimelineEntry {
   id: string;
@@ -150,80 +150,81 @@ const ExperienceTimeline = ({
 const defaultEntries: TimelineEntry[] = [
   {
     id: "1",
-    role: "Senior Business Development Manager",
-    company: "Honda Motor Co., Ltd.",
-    duration: "2019 - Present",
-    location: "Tokyo, Japan",
+    role: "role",
+    company: "Company",
+    duration: "YYYY - YYYY",
+    location: "City, Country",
     responsibilities: [
-      "Lead strategic business initiatives across APAC markets",
-      "Develop and implement market expansion strategies",
-      "Manage cross-functional teams of 15+ professionals",
-      "Oversee annual budget of $12M for business development activities",
+      "responsibilities # one, What Why, How",
+      "responsibilities # two, What Why, How",
+      "responsibilities # three, What Why, How",
+      "responsibilities # four, What Why, How",
     ],
     achievements: [
-      "Increased market share by 12%",
-      "Launched 3 new product lines",
-      "Negotiated key partnerships",
-      "Reduced operational costs by 18%",
+      "Achivement # one",
+      "Achivement # two",
+      "Achivement # three",
+      "Achivement # four",
     ],
   },
   {
     id: "2",
-    role: "Business Development Manager",
-    company: "Honda Motor Co., Ltd.",
-    duration: "2015 - 2019",
-    location: "Osaka, Japan",
+    role: "Role",
+    company: "Company",
+    duration: "YYYY - YYYY",
+    location: "City, Country",
     responsibilities: [
-      "Identified and developed new business opportunities in emerging markets",
-      "Conducted market research and competitive analysis",
-      "Managed client relationships and partnerships",
-      "Prepared and presented business proposals to senior leadership",
+      "responsibilities # one, What Why, How",
+      "responsibilities # two, What Why, How",
+      "responsibilities # three, What Why, How",
+      "responsibilities # four, What Why, How",
     ],
     achievements: [
-      "Secured 5 major accounts",
-      "Exceeded sales targets by 22%",
-      "Developed new market strategy",
-      "Led successful product launch",
+      "Achivement # one",
+      "Achivement # two",
+      "Achivement # three",
+      "Achivement # four",
     ],
   },
   {
     id: "3",
-    role: "Marketing Specialist",
-    company: "Honda Motor Co., Ltd.",
-    duration: "2012 - 2015",
-    location: "Tokyo, Japan",
+    role: "Role",
+    company: "Company",
+    duration: "YYYY - YYYY",
+    location: "City, Country",
     responsibilities: [
-      "Developed and executed marketing campaigns for automotive products",
-      "Collaborated with advertising agencies on brand messaging",
-      "Analyzed market trends and consumer behavior",
-      "Managed social media presence and digital marketing initiatives",
+      "responsibilities # one, What Why, How",
+      "responsibilities # two, What Why, How",
+      "responsibilities # three, What Why, How",
+      "responsibilities # four, What Why, How",
     ],
     achievements: [
-      "Increased social engagement by 45%",
-      "Redesigned marketing materials",
-      "Optimized campaign ROI",
-      "Won industry marketing award",
+      "Achivement # one",
+      "Achivement # two",
+      "Achivement # three",
+      "Achivement # four",
     ],
   },
   {
     id: "4",
-    role: "Business Analyst",
-    company: "Honda Motor Co., Ltd.",
-    duration: "2010 - 2012",
-    location: "Nagoya, Japan",
+    role: "Role",
+    company: "Company",
+    duration: "YYYY - YYYY",
+    location: "City, Country",
     responsibilities: [
-      "Performed financial analysis and forecasting for business units",
-      "Prepared reports and presentations for management review",
-      "Supported strategic planning processes",
-      "Identified process improvement opportunities",
+      "responsibilities # one, What Why, How",
+      "responsibilities # two, What Why, How",
+      "responsibilities # three, What Why, How",
+      "responsibilities # four, What Why, How",
     ],
     achievements: [
-      "Streamlined reporting process",
-      "Implemented new analytics tools",
-      "Improved forecast accuracy by 18%",
-      "Developed executive dashboard",
+      "Achivement # one",
+      "Achivement # two",
+      "Achivement # three",
+      "Achivement # four",
     ],
   },
 ];
+
 
 export default ExperienceTimeline;

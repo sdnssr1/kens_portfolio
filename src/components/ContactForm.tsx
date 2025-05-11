@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -11,8 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, Linkedin, Mail, Phone } from "lucide-react";
+import React, { useState } from "react";
 
 interface ContactFormProps {
   onSubmit?: (formData: FormData) => void;
@@ -101,19 +101,19 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
     <div className="w-full max-w-2xl mx-auto bg-zinc-900 p-6 rounded-xl border border-zinc-800">
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center text-gray-100">
+          <CardTitle className="text-2xl font-bold text-center text-white-100">
             Get in Touch
           </CardTitle>
-          <CardDescription className="text-center text-gray-400">
-            Fill out the form below to contact Ken Muvatsi directly
+          <CardDescription className="text-center text-white-400">
+            Fill out the form below!
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSubmitted ? (
             <Alert className="bg-zinc-800 border-zinc-700 mb-6">
-              <CheckCircle className="h-5 w-5 text-gray-300" />
-              <AlertDescription className="text-gray-300">
-                Thank you for your message! Ken Muvatsi will get back to you
+              <CheckCircle className="h-4 w-4 text-white-300" />
+              <AlertDescription className="text-white-300">
+                Thank you for your message! I will get back to you
                 soon.
               </AlertDescription>
             </Alert>
@@ -121,7 +121,7 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-gray-300">
+              <Label htmlFor="name" className="text-white-300">
                 Name
               </Label>
               <Input
@@ -138,7 +138,7 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-300">
+              <Label htmlFor="email" className="text-white-300">
                 Email
               </Label>
               <Input
@@ -156,7 +156,7 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="subject" className="text-gray-300">
+              <Label htmlFor="subject" className="text-white-300">
                 Subject
               </Label>
               <Input
@@ -173,7 +173,7 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-gray-300">
+              <Label htmlFor="message" className="text-white-300">
                 Message
               </Label>
               <Textarea
@@ -192,7 +192,7 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
 
             <Button
               type="submit"
-              className="w-full bg-zinc-800 hover:bg-zinc-700 text-gray-200 border border-zinc-700"
+              className="w-full bg-zinc-800 hover:bg-zinc-700 text-white-200 border border-zinc-700"
             >
               Send Message
             </Button>
@@ -200,32 +200,32 @@ const ContactForm = ({ onSubmit }: ContactFormProps = {}) => {
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
           <div className="w-full border-t border-zinc-700 pt-4">
-            <h3 className="text-sm font-medium text-gray-300 mb-3">
-              Connect with Ken Muvatsi
+            <h3 className="text-sm font-extrabold text-white-300 mb-3">
+              Connect with me
             </h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 ">
               <a
                 href="https://linkedin.com/in/ken-muvatsi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-gray-600 hover:text-red-600"
+                className="flex items-center text-sm text-white-600 hover:text-red-600" 
               >
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
               </a>
               <a
-                href="mailto:ken.muvatsi@example.com"
-                className="flex items-center text-sm text-gray-600 hover:text-red-600"
+                href="mailto:kmuvatsi@lynnwoodhonda.com"
+                className="flex items-center text-sm text-white-600 hover:text-red-600"
               >
                 <Mail className="h-5 w-5 mr-2" />
-                ken.muvatsi@example.com
+                kmuvatsi@lynnwoodhonda.com
               </a>
               <a
                 href="tel:+1234567890"
-                className="flex items-center text-sm text-gray-600 hover:text-red-600"
+                className="flex items-center text-sm text-white-600 hover:text-red-600"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                (123) 456-7890
+                (206) 454-0466
               </a>
             </div>
           </div>

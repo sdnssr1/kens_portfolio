@@ -1,6 +1,5 @@
-import React from "react";
-import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 interface HeroSectionProps {
   name?: string;
@@ -12,9 +11,9 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   name = "Ken Muvatsi",
-  title = "Senior Business Development Executive",
-  introduction = "With over 15 years of experience at Honda, I've led strategic initiatives that have expanded our market presence and driven sustainable growth across North America and Asia Pacific regions.",
-  imageUrl = "https://i.imgur.com/Yd6CgPu.png",
+  title = "title",
+  introduction = "introduction",
+  imageUrl = "/src/components/ken.jpg",
   onContactClick = () => console.log("Contact button clicked"),
 }: HeroSectionProps) => {
   return (
@@ -40,13 +39,16 @@ const HeroSection = ({
             {title} | Honda Motor Co.
           </h2>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl">{introduction}</p>
+          
           <div className="flex flex-wrap gap-4">
+            
             <Button
               onClick={onContactClick}
               className="bg-zinc-800 hover:bg-zinc-700 text-gray-200 px-6 py-2 rounded-md border border-gray-700"
             >
               Contact Me <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+
             <Button
               variant="outline"
               className="border-gray-600 text-gray-300 hover:bg-zinc-800"
@@ -67,7 +69,7 @@ const HeroSection = ({
           </div>
           <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-black rounded-full flex items-center justify-center shadow-lg border border-gray-700">
             <img
-              src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?w=400&q=80"
+              src="src/components/Honda.jpg"
               alt="Honda Logo"
               className="w-16 h-16 object-contain"
             />
