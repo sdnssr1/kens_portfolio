@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-
 interface HeroSectionProps {
   name?: string;
   title?: string;
@@ -13,8 +12,13 @@ const HeroSection = ({
   name = "Ken Muvatsi",
   title = "title",
   introduction = "introduction",
-  imageUrl = "/src/components/ken.jpg",
-  onContactClick = () => console.log("Contact button clicked"),
+  imageUrl = '/ken.jpg',
+  onContactClick = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  },
 }: HeroSectionProps) => {
   return (
     <section className="w-full min-h-[600px] bg-black flex items-center relative overflow-hidden">
@@ -49,12 +53,6 @@ const HeroSection = ({
               Contact Me <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
 
-            <Button
-              variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-zinc-800"
-            >
-              View Resume
-            </Button>
           </div>
         </div>
 
@@ -69,7 +67,7 @@ const HeroSection = ({
           </div>
           <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-black rounded-full flex items-center justify-center shadow-lg border border-gray-700">
             <img
-              src="src/components/Honda.jpg"
+              src="/Honda.jpg"
               alt="Honda Logo"
               className="w-16 h-16 object-contain"
             />
