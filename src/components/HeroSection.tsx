@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   name = "Ken Muvatsi",
-  title = "title",
+  title = "Sales Consultant",
   introduction = "introduction",
   imageUrl = '/ken.jpg',
   onContactClick = () => {
