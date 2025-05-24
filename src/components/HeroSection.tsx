@@ -12,7 +12,7 @@ const HeroSection = ({
   name = "Ken Muvatsi",
   title = "Sales Consultant",
   introduction = "introduction",
-  imageUrl = '/ken.jpg',
+  imageUrl = 'components/aboutme.jpg',
   onContactClick = () => {
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
@@ -36,7 +36,7 @@ const HeroSection = ({
       <div className="container mx-auto px-4 md:px-6 py-12 flex flex-col md:flex-row items-center z-10">
         {/* Content */}
         <div className="md:w-3/5 md:pr-8 mb-8 md:mb-0">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-100 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-100 mb-4 text-center">
             {name}
           </h1>
           <h2 className="text-xl md:text-2xl font-medium text-gray-300 mb-6">

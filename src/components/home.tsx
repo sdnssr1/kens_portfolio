@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
-import ExperienceTimeline from "./ExperienceTimeline";
+import ExperienceSection from "./ExperienceSection";
 import HeroSection from "./HeroSection";
 import { Separator } from "./ui/separator";
 
@@ -246,34 +246,9 @@ const HomePage = () => {
 
         <Separator className="max-w-5xl mx-auto" />
 
-        {/* Experience Timeline Section */}
-        <section
-          id="experience"
-          className="py-16 md:py-24 bg-zinc-900"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(192, 192, 192, 0.1) 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl font-bold text-white-100 mb-4">
-                Professional Experience
-              </h2>
-              <p className="text-lg text-white-400 max-w-2xl mx-auto">
-                My career journey at Honda, showcasing leadership and business
-                expertise in the automotive industry.
-              </p>
-            </motion.div>
-            <ExperienceTimeline />
-          </div>
+        {/* Experience Section */}
+        <section id="experience">
+          <ExperienceSection />
         </section>
 
         <Separator className="max-w-5xl mx-auto" />
@@ -330,7 +305,7 @@ const HomePage = () => {
             >
               <div>
                 <img
-                  src="/ken.jpg"
+                  src="components/aboutme.jpg"
                   alt="Ken Muvatsi at Honda corporate office"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />

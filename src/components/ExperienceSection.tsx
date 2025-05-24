@@ -1,11 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import React from "react";
 
-interface TimelineEntry {
+interface JobEntry {
   id: string;
   role: string;
   company: string;
@@ -15,13 +12,13 @@ interface TimelineEntry {
   achievements: string[];
 }
 
-interface ExperienceTimelineProps {
-  entries?: TimelineEntry[];
+interface ExperienceSectionProps {
+  entries?: JobEntry[];
 }
 
-const ExperienceTimeline = ({
+const ExperienceSection = ({
   entries = defaultEntries,
-}: ExperienceTimelineProps) => {
+}: ExperienceSectionProps) => {
   return (
     <section
       className="py-16 bg-zinc-900"
@@ -32,30 +29,39 @@ const ExperienceTimeline = ({
       }}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-100">
-          Professional Experience
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold text-gray-100 mb-4">
+            Professional Experience
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            My career journey at Honda, showcasing leadership and business expertise in the automotive industry.
+          </p>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto">
-          {entries.map((entry, index) => (
+          {entries.map((entry) => (
             <motion.div
               key={entry.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="overflow-hidden border-l-4 border-gray-400 shadow-md hover:shadow-lg transition-shadow bg-zinc-800 text-gray-200">
+              <Card className="overflow-hidden border-l-4 border-gray-400 shadow-lg hover:shadow-xl transition-shadow bg-zinc-800 text-gray-200">
                 <CardContent className="p-6">
-                  <div>
+                  <div className="mb-4">
                     <h3 className="text-xl font-bold text-gray-100">
                       {entry.role}
                     </h3>
                     <p className="text-gray-300 font-medium">
                       {entry.company}
                     </p>
-                    <div className="flex gap-3 mt-2 mb-4">
+                    <div className="flex gap-3 mt-2">
                       <Badge className="bg-zinc-700 text-gray-300 border-zinc-600">
                         {entry.duration}
                       </Badge>
@@ -65,7 +71,7 @@ const ExperienceTimeline = ({
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-zinc-700">
+                  <div className="pt-4 border-t border-zinc-700">
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-100 mb-2">
                         Key Responsibilities:
@@ -106,84 +112,26 @@ const ExperienceTimeline = ({
   );
 };
 
-const defaultEntries: TimelineEntry[] = [
+const defaultEntries: JobEntry[] = [
   {
     id: "1",
-    role: "role",
-    company: "Company",
-    duration: "YYYY - YYYY",
-    location: "City, Country",
+    role: "Product Specialist",
+    company: "lynnwoodhonda",
+    duration: "2023 - Present",
+    location: "lynnwood, The United States",
     responsibilities: [
-      "responsibilities # one, What Why, How",
-      "responsibilities # two, What Why, How",
-      "responsibilities # three, What Why, How",
-      "responsibilities # four, What Why, How",
+      "Built personalized, pressure-free relationships with customers to earn trust and drive long-term satisfaction through consistent follow-ups.",
+      "Guided customers through leasing options, aligning features and terms with their personal and financial goals.",
+      "Identified key customer needs by asking targeted questions and customizing presentations to match their priorities.",
+      "Ensured a smooth, end-to-end experience by coordinating across sales, finance, and delivery teams with a focus on speed and clarity."
     ],
     achievements: [
-      "Achivement # one",
-      "Achivement # two",
-      "Achivement # three",
-      "Achivement # four",
-    ],
-  },
-  {
-    id: "2",
-    role: "Role",
-    company: "Company",
-    duration: "YYYY - YYYY",
-    location: "City, Country",
-    responsibilities: [
-      "responsibilities # one, What Why, How",
-      "responsibilities # two, What Why, How",
-      "responsibilities # three, What Why, How",
-      "responsibilities # four, What Why, How",
-    ],
-    achievements: [
-      "Achivement # one",
-      "Achivement # two",
-      "Achivement # three",
-      "Achivement # four",
-    ],
-  },
-  {
-    id: "3",
-    role: "Role",
-    company: "Company",
-    duration: "YYYY - YYYY",
-    location: "City, Country",
-    responsibilities: [
-      "responsibilities # one, What Why, How",
-      "responsibilities # two, What Why, How",
-      "responsibilities # three, What Why, How",
-      "responsibilities # four, What Why, How",
-    ],
-    achievements: [
-      "Achivement # one",
-      "Achivement # two",
-      "Achivement # three",
-      "Achivement # four",
-    ],
-  },
-  {
-    id: "4",
-    role: "Role",
-    company: "Company",
-    duration: "YYYY - YYYY",
-    location: "City, Country",
-    responsibilities: [
-      "responsibilities # one, What Why, How",
-      "responsibilities # two, What Why, How",
-      "responsibilities # three, What Why, How",
-      "responsibilities # four, What Why, How",
-    ],
-    achievements: [
-      "Achivement # one",
-      "Achivement # two",
-      "Achivement # three",
-      "Achivement # four",
-    ],
-  },
+      "Achieved 98%+ customer satisfaction score through consistent follow-ups and personalized service.",
+      "Closed over 150 successful lease agreements by matching customers with the right vehicle and terms.",
+      "Generated repeat business and referrals by building lasting client relationships and trust.",
+      "Recognized by management for delivering a seamless sales-to-delivery experience across departments."
+    ]
+  }
 ];
 
-
-export default ExperienceTimeline;
+export default ExperienceSection;
